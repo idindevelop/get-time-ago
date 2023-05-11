@@ -173,7 +173,12 @@ class GetTimeAgo {
           .join(_message.wordSeparator());
     }
     else if(mounth<13){
-      msg = _message.daysAgo(mounth.round());
+      msg = _message.monthAgo(mounth.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res.isNotEmpty)
+          .join(_message.wordSeparator());
+    } else if(year<10){
+      msg = _message.monthAgo(year.round());
       result = [_prefix, msg, _suffix]
           .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
