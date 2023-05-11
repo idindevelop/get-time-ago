@@ -31,4 +31,13 @@ class HindiMessages implements Messages {
 
   @override
   String wordSeparator() => ' ';
+  @override
+  String monthAgo(int months) {
+    return " ";
+  }
+
+  @override
+  String yearsAgo(int years) {
+    return " ";
+  }
 }

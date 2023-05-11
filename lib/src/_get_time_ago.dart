@@ -2,6 +2,7 @@ import 'package:get_time_ago/src/messages/languages/ar_msg.dart';
 import 'package:get_time_ago/src/messages/languages/de_msg.dart';
 import 'package:get_time_ago/src/messages/languages/en_msg.dart';
 import 'package:get_time_ago/src/messages/languages/es_msg.dart';
+import 'package:get_time_ago/src/messages/languages/fa_msg.dart';
 import 'package:get_time_ago/src/messages/languages/fr_msg.dart';
 import 'package:get_time_ago/src/messages/languages/hi_msg.dart';
 import 'package:get_time_ago/src/messages/languages/id_msg.dart';
@@ -24,6 +25,7 @@ class GetTimeAgo {
     'ar': ArabicMessages(),
     'en': EnglishMessages(),
     'es': EspanaMessages(),
+    "fa": PersianMessages(),
     'fr': FrenchMessages(),
     'hi': HindiMessages(),
     'pt': PortugueseBrazilMessages(),
@@ -103,6 +105,8 @@ class GetTimeAgo {
     final num minutes = seconds / 60;
     final num hours = minutes / 60;
     final num days = hours / 24;
+    final num mounth = days / 31;
+    final num year = mounth / 12;
 
     String msg;
     String result;
@@ -168,7 +172,12 @@ class GetTimeAgo {
           .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     }
-
+    else if(mounth<13){
+      msg = _message.daysAgo(mounth.round());
+      result = [_prefix, msg, _suffix]
+          .where((res) => res.isNotEmpty)
+          .join(_message.wordSeparator());
+    }
     /// If [elapsed] is greater than 8 days,
     /// a formatted [Date] will be returned.
     else {
