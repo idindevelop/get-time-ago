@@ -178,7 +178,7 @@ class GetTimeAgo {
           .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());
     } else if(year<10){
-      msg = _message.monthAgo(year.round());
+      msg = _message.yearsAgo(year.round());
       result = [_prefix, msg, _suffix]
           .where((res) => res.isNotEmpty)
           .join(_message.wordSeparator());

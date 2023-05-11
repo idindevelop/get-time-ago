@@ -32,11 +32,11 @@ class PersianMessages implements Messages {
   String wordSeparator() => ' ';
   @override
   String monthAgo(int months) {
-    return "ماه";
+  return  "$months ماه";
   }
 
   @override
   String yearsAgo(int years) {
-    return "سال";
+  return  "$years سال";
   }
 }
