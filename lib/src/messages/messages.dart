@@ -28,6 +28,11 @@ abstract class Messages {
   /// When time is in days
   String daysAgo(int days);
 
+  /// When time is in days
+  String monthAgo(int months);
+
+  String yearsAgo(int years);
+
   /// Word separator when words are concatenated
   String wordSeparator() => ' ';
 }
